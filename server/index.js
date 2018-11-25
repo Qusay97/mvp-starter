@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var items = require('../database-mysql');
 var sites = require('../database-mongo');
+var path = require("path");
 
 var app = express();
 
@@ -31,11 +32,18 @@ app.get('/site', function (req, res) {
     if(err) {
       res.sendStatus(500);
     } else {
-    	// console.log(data) return array.
-      res.send(data);
+    	// console.log(data)
+       //return array.
+      // res.send(data);
     }
   });
+    ///not working
+  res.sendFile('site.html');
+    
 });
+
+
+
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log('listening on port 3000!');

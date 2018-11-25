@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import axios from 'axios';
+// import axios from 'axios';
 
 class Form extends React.Component {
 	constructor(props) {
@@ -31,7 +31,39 @@ class Form extends React.Component {
       }
     })
   	};
+  	// componentDidMount() {
+  		// onSubmit2() {
+  		// 	console.log("looool")
 
+  		
+  			// axios.get('/').then(data => this.setState({
+     //    	image: data[data.length -1].image,
+     //    	name: data[data.length -1].name,
+     //    	description: data[data.length -1].description,
+     //    	birthday: data[data.length -1].birthday
+     //    }))
+  		// }
+  	// };
+
+  	// onSubmit2() {
+  	//   $.ajax({
+   //    url: '/site',
+   //    type: 'GET',
+   //    success: function(data){
+   //    	console.log(data)
+   //      this.setState({
+   //      	image: data[data.length -1].image,
+   //      	name: data[data.length -1].name,
+   //      	description: data[data.length -1].description,
+   //      	birthday: data[data.length -1].birthday
+   //      })
+   //    },
+   //    error: function( jqXhr, textStatus, errorThrown ){
+   //      console.log( errorThrown );
+   //    }
+   //  })
+  	// };
+//<button onClick={() => this.onSubmit2()}>Show Me</button>
 	render() {
 		return (
 			<div>
@@ -44,12 +76,9 @@ class Form extends React.Component {
 				onChange={e => this.setState({description: e.target.value})} />
 				<input placeholder='Birthday' value={this.state.birthday}
 				onChange={e => this.setState({birthday: e.target.value})} />
-				<button onClick={() => this.onSubmit(this.state)}>Make Me</button>
+				<button onClick={() => this.onSubmit(this.state)}>Save Me</button>
+				
 			</form>
-				<img src={this.state.image} />
-				<h1>{this.state.name}</h1>
-				<p>{this.state.description}</p>
-				<p>{this.state.birthday}</p>
 			</div>
 		);
 	};
