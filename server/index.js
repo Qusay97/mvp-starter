@@ -38,7 +38,7 @@ app.get('/site', function (req, res) {
     }
   });
     ///not working
-  res.sendFile('site.html');
+  res.sendFile(__dirname +'/site.html');
     
 });
 

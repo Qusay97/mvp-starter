@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Form from './components/Site.jsx';
 
-class App extends React.Component {
+class SiteApp extends React.Component {
   // constructor(props) {
   //   super(props);
   // }
@@ -14,4 +14,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('siteapp'));
+ReactDOM.render(<SiteApp />, document.getElementById('siteapp'));
