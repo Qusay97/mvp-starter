@@ -11,15 +11,17 @@ db.once('open', function() {
   console.log('mongoose connected successfully');
 });
 
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+var siteSchema = mongoose.Schema({
+  image: String,
+  name: String,
+  description: String,
+  birthday: String
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var Site = mongoose.model('Site', siteSchema);
 
 var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
+  Site.find({}, function(err, items) {
     if(err) {
       callback(err, null);
     } else {
@@ -28,4 +30,14 @@ var selectAll = function(callback) {
   });
 };
 
+let save = (image,name,description,birthday) => {
+  var site = new Site({image: image, name: name, description: description, birthday: birthday})
+  site.save(function (err, site) {
+    if (err) return console.error(err);
+    console.log(site)
+  });
+}
+
+
+module.exports.save = save;
 module.exports.selectAll = selectAll;
